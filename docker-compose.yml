@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  web:
+    container_name: moveit_web
+    build: ./web
+    volumes:
+      - ./web:/usr/src/app
+    ports:
+      - "3000:3000"
+    stdin_open: true
