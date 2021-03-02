@@ -1,11 +1,15 @@
 import React from "react";
 import GlobalStyles from "./assets/styles/global";
 
+import ExperienceBar from "./components/ExperienceBar";
+
 function App() {
   return (
     <React.Fragment>
       <GlobalStyles />
-      <h1>NLW 4</h1>
+      <div className="container">
+        <ExperienceBar />
+      </div>
     </React.Fragment>
   );
 }
