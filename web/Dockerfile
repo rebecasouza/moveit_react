@@ -12,4 +12,4 @@ USER node
 
 COPY . .
 
-CMD ["yarn", "start"]
+CMD ["yarn", "dev"]
