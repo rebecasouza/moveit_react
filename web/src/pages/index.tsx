@@ -1,13 +1,14 @@
-import React from "react";
+import React from 'react';
+import Head from 'next/head';
 
-import ExperienceBar from "../components/ExperienceBar";
+import ExperienceBar from '../components/ExperienceBar';
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
-    <React.Fragment>
-      <div className="container">
-        <ExperienceBar />
-      </div>
-    </React.Fragment>
+    <div className="container">
+      <ExperienceBar />
+    </div>
   );
-}
+};
+
+export default Home;
