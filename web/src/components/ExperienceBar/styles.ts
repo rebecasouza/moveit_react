@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import colors from "../../assets/styles/colors";
+import styled from 'styled-components';
+import colors from '../../assets/styles/theme';
 
 export const Header = styled.header`
   display: flex;
@@ -13,14 +13,14 @@ export const Header = styled.header`
     flex: 1;
     height: 4px;
     border-radius: 4px;
-    background: ${colors.grayLine};
+    background: ${props => props.theme.colors.grayLine};
     margin: 0 1.5rem;
     position: relative;
 
     div {
       height: 4px;
       border-radius: 4px;
-      background: ${colors.green};
+      background: ${props => props.theme.colors.green};
     }
 
     span {
