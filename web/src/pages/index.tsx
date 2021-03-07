@@ -1,11 +1,12 @@
 import React from 'react';
-import Head from 'next/head';
 
 import ExperienceBar from '../components/ExperienceBar';
 import Profile from '../components/Profile';
 import CompletedChallenges from '../components/CompletedChallenges';
+import Countdown from '../components/Countdown';
 
 import { Container, Section } from '../styles/Pages/Home';
+
 const Home: React.FC = () => {
   return (
     <Container>
@@ -14,6 +15,7 @@ const Home: React.FC = () => {
         <div>
           <Profile />
           <CompletedChallenges />
+          <Countdown />
         </div>
         <div></div>
       </Section>
