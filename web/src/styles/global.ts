@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import colors from './theme';
 
 export default createGlobalStyle`
   html {
@@ -19,8 +18,8 @@ export default createGlobalStyle`
   }
 
   body {
-    background: ${colors.background};
-    color: ${colors.text};
+    background: ${props => props.theme.colors.background};
+    color: ${props => props.theme.colors.text};
   }
 
   body, input, textarea, button {
@@ -34,15 +33,5 @@ export default createGlobalStyle`
   a {
     color: inherit;
     text-decoration: none;
-  }
-
-  .container {
-    height: 100vh;
-    max-width: 992px;
-    margin: 0 auto;
-    padding: 2.5rem 2rem 2rem;
-
-    display: flex;
-    flex-direction: column;
   }
 `;
