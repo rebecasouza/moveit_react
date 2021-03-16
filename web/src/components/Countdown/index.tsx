@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { CountdownContext } from '../../contexts/CountdownContext';
 
 import { Button, Container, Content } from './styles';
 
-let timerTimeout: NodeJS.Timeout;
-
 const Countdown: React.FC = () => {
-  const [time, setTime] = useState(25 * 60);
-  const [isActive, setIsActive] = useState(false);
-  const [hasFinished, setHasFinished] = useState(false);
-
-  const minutes = Math.floor(time / 60);
-  const seconds = time % 60;
+  const {
+    minutes,
+    seconds,
+    isActive,
+    hasFinished,
+    startTimer,
+    resetTimer,
+  } = useContext(CountdownContext);
 
   const [minutesFirstDigit, minutesSecondDigit] = String(minutes)
     .padStart(2, '0')
@@ -19,27 +20,6 @@ const Countdown: React.FC = () => {
   const [secondsFirstDigit, secondsSecondDigit] = String(seconds)
     .padStart(2, '0')
     .split('');
-
-  function startTimer() {
-    setIsActive(true);
-  }
-
-  function resetTimer() {
-    clearTimeout(timerTimeout);
-    setIsActive(false);
-    setTime(0.1 * 60);
-  }
-
-  useEffect(() => {
-    if (isActive && time > 0) {
-      timerTimeout = setTimeout(() => {
-        setTime(time - 1);
-      }, 1000);
-    } else if (isActive && time === 0) {
-      setHasFinished(true);
-      setIsActive(false);
-    }
-  }, [isActive, time]);
 
   return (
     <Container>
