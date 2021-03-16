@@ -13,7 +13,9 @@ import EyeIcon from '../../assets/icons/eye.svg';
 import { ChallengesContext } from '../../contexts/ChallengesContext';
 
 const ChallengeBox: React.FC = () => {
-  const { activeChallenge, resetChallenge } = useContext(ChallengesContext);
+  const { activeChallenge, resetChallenge, completeChalllenge } = useContext(
+    ChallengesContext
+  );
 
   return (
     <Container>
@@ -31,7 +33,9 @@ const ChallengeBox: React.FC = () => {
             <Button onClick={resetChallenge} className="fail">
               Falhei
             </Button>
-            <Button className="success">Completei</Button>
+            <Button onClick={completeChalllenge} className="success">
+              Completei
+            </Button>
           </footer>
         </ActiveChallenge>
       ) : (

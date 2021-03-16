@@ -17,7 +17,10 @@ const ExperienceBar: React.FC = () => {
       <div>
         <div style={{ width: `${percentToNextLevel}%` }} />
 
-        <span style={{ left: `${percentToNextLevel}%` }}>300 xp</span>
+        <span style={{ left: `${percentToNextLevel}%` }}>
+          {' '}
+          {currentExperience} xp
+        </span>
       </div>
       <span>{experienceToNextLevel} xp</span>
     </Header>
