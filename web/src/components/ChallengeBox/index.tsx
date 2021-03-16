@@ -11,11 +11,23 @@ import LevelUpIcon from '../../assets/icons/level-up.svg';
 import BodyIcon from '../../assets/icons/body.svg';
 import EyeIcon from '../../assets/icons/eye.svg';
 import { ChallengesContext } from '../../contexts/ChallengesContext';
+import { CountdownContext } from '../../contexts/CountdownContext';
 
 const ChallengeBox: React.FC = () => {
   const { activeChallenge, resetChallenge, completeChalllenge } = useContext(
     ChallengesContext
   );
+  const { resetTimer } = useContext(CountdownContext);
+
+  function handleChallengeSucceeded() {
+    completeChalllenge();
+    resetTimer();
+  }
+
+  function handleChallengeFailed() {
+    resetChallenge();
+    resetTimer();
+  }
 
   return (
     <Container>
@@ -30,10 +42,10 @@ const ChallengeBox: React.FC = () => {
           </main>
 
           <footer>
-            <Button onClick={resetChallenge} className="fail">
+            <Button onClick={handleChallengeFailed} className="fail">
               Falhei
             </Button>
-            <Button onClick={completeChalllenge} className="success">
+            <Button onClick={handleChallengeSucceeded} className="success">
               Completei
             </Button>
           </footer>
