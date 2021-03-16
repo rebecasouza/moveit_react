@@ -1,19 +1,43 @@
 import React from 'react';
 
-import { Container } from './styles';
+import {
+  Container,
+  ActiveChallenge,
+  InactiveChallenge,
+  Button,
+} from './styles';
 
 import LevelUpIcon from '../../assets/icons/level-up.svg';
+import BodyIcon from '../../assets/icons/body.svg';
 
 const ChallengeBox: React.FC = () => {
+  const hasActiveChallenge = true;
   return (
     <Container>
-      <div className="inactiveChallenge">
-        <strong>Finalize um ciclo para receber um desafio</strong>
-        <p>
-          <LevelUpIcon />
-          Avance levels completando desafios.
-        </p>
-      </div>
+      {hasActiveChallenge ? (
+        <ActiveChallenge>
+          <header>Ganhe 400 xp</header>
+
+          <main>
+            <BodyIcon />
+            <strong>Novo desafio</strong>
+            <p>Levante e faça uma caminhada de 3 minutos.</p>
+          </main>
+
+          <footer>
+            <Button className="fail">Falhei</Button>
+            <Button className="success">Completei</Button>
+          </footer>
+        </ActiveChallenge>
+      ) : (
+        <InactiveChallenge>
+          <strong>Finalize um ciclo para receber um desafio</strong>
+          <p>
+            <LevelUpIcon />
+            Avance levels completando desafios.
+          </p>
+        </InactiveChallenge>
+      )}
     </Container>
   );
 };
