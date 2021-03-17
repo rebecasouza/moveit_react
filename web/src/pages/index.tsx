@@ -19,7 +19,6 @@ interface HomeProps {
 }
 
 const Home: React.FC<HomeProps> = props => {
-  console.log(props);
   return (
     <ChallengesProvider
       level={props.level}
