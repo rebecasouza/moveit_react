@@ -4,7 +4,7 @@ import { GetServerSideProps } from 'next';
 import ExperienceBar from '../components/ExperienceBar';
 import Profile from '../components/Profile';
 import CompletedChallenges from '../components/CompletedChallenges';
-import Countdown from '../components/Countdown';
+import Countdown from '../components/Timer';
 import ChallengeBox from '../components/ChallengeBox';
 
 import { Container, Section } from '../styles/Pages/Home';
